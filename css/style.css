@@ -1,0 +1,52 @@
+/* Fuentes */
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Hairline&family=Monoton&family=Press+Start+2P&display=swap');
+
+.btn-main {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#text-stop {
+    font-family: 'Press Start 2P', cursive;
+    color: #ff6767;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.btn {
+    background: none;
+    border: none;
+}
+
+/* Arcoiris */
+.red {
+    background-color: #ff6767;
+}
+
+.orange {
+    background-color: #ff9f67;
+}
+
+.yellow {
+    background-color: #fff567;
+}
+
+.green {
+    background-color: #85ff67;
+}
+
+.blue {
+    background-color: #67e8ff;
+}
+
+.violet {
+    background-color: #9c67ff;
+}
+
+.btn-light {
+    color: aliceblue;
+}

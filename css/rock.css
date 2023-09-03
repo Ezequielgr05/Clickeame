@@ -1,0 +1,63 @@
+.rock {
+    animation-name: fiesta;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+
+.text-rock {
+    font-family: 'Press Start 2P', cursive;
+    margin-top: 15px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.gif-rock {
+    width: 25%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.btn-stop {
+    background: none;
+    border: none;
+    display: block;
+    margin: 0 auto;
+    font-family: 'Press Start 2P', cursive;
+    margin-top: 15px;
+    text-align: center;
+}
+
+@keyframes fiesta {
+    0% {
+        background-color: #ff6767;
+    }
+    
+    10% {
+        background-color: #ff9f67;
+    }
+    
+    20% {
+        background-color: #fff567;
+    }
+    
+    30% {
+        background-color: #85ff67;
+    }
+    
+    40% {
+        background-color: #67e8ff;
+    }
+
+    50% {
+        background-color: #67a4ff;
+    }
+    
+    60% {
+        background-color: #9c67ff;
+    }
+
+    70% {
+        background-color: #ff67d9;
+    }
+}
