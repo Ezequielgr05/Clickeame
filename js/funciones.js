@@ -115,3 +115,5 @@ btnStop.addEventListener("click", () => {
     audioRock.pause();
     audioRock.load();
 })
+
+//Bomba nuclear
