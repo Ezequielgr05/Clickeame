@@ -4,13 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clickeame!</title>
+    <link rel="shortcut icon" href="img/logoMouse.png">
     <!-- Css -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/rock.css">
 </head>
-<body class="">
-
-    <button class="btn btn-main" id="botonRandom">Clikeame!</button>
+<body>
+    <div id="bombafondo">
+        <button class="btn btn-main" id="botonRandom">Clikeame!</button>
+        <audio src="audio/explosion.mp3" id="audio-explosion"></audio>
+        <audio src="audio/clickButton.mp3" id="audio-click"></audio>
+    </div>
+    
     
     <!-- funcion rickroll -->
     <div class="rickroll">
@@ -25,6 +30,7 @@
         <audio src="audio/MariposaTecknicolor.mp3" id="audio-rock"></audio>
         <button class="btn-stop" id="btn-stop"></button>
     </div>
+
 
     <!-- Script -->
     <script src="js/funciones.js"></script>

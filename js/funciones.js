@@ -1,7 +1,7 @@
 // Boton principal
 botonRandom = document.querySelector("#botonRandom")
 checker = 0; 
-funciones = [arcoiris, rickroll, rock];
+funciones = [arcoiris, rickroll, rock, bombaNuclear];
 let rick = 0;
 
 botonRandom.addEventListener("click", () => {
@@ -63,10 +63,12 @@ function defaultColor(){
     document.body.classList.remove("blue")
     document.body.classList.remove("violet")
     botonRandom.classList.remove("btn-light")
+    document.body.classList.add("bgFondoNormal")
 }
 
 function arcoiris(){
     checker = 1;
+    document.body.classList.remove("bgFondoNormal")
     colores[color]()
     if (color == 6) {
         color = 0;
@@ -117,3 +119,93 @@ btnStop.addEventListener("click", () => {
 })
 
 //Bomba nuclear
+bombaFondo = document.querySelector("#bombafondo")
+audioExplosion = document.querySelector("#audio-explosion")
+audioClick = document.querySelector("#audio-click")
+
+function bombaNuclear(){
+    botonRandom.disabled = true;
+    botonRandom.classList.add("bombacontador")
+
+    // Animacion del 3
+    setTimeout(() => {
+        botonRandom.innerHTML = "3";
+    }, 250)
+    setTimeout(() => {
+        botonRandom.innerHTML = "3.";
+    }, 500)
+    setTimeout(() => {
+        botonRandom.innerHTML = "3..";
+    }, 750)
+    setTimeout(() => {
+        botonRandom.innerHTML = "3...";
+    }, 1000)
+
+    // Animacion del 2
+    setTimeout(() => {
+        botonRandom.innerHTML = "2";
+    }, 1250)
+    setTimeout(() => {
+        botonRandom.innerHTML = "2.";
+    }, 1500)
+    setTimeout(() => {
+        botonRandom.innerHTML = "2..";
+    }, 1750)
+    setTimeout(() => {
+        botonRandom.innerHTML = "2...";
+    }, 2000)
+
+    // Animacion del 1
+    setTimeout(() => {
+        botonRandom.innerHTML = "1";
+    }, 2250)
+    setTimeout(() => {
+        botonRandom.innerHTML = "1.";
+    }, 2500)
+    setTimeout(() => {
+        botonRandom.innerHTML = "1..";
+    }, 2750)
+    setTimeout(() => {
+        botonRandom.innerHTML = "1...";
+    }, 3000)
+
+    // Animacion de la bomba lanzada
+    setTimeout(() => {
+        botonRandom.classList.remove("bombacontador")
+        botonRandom.classList.add("bombalanzado")
+        audioClick.load()
+        audioClick.play()
+        botonRandom.innerHTML = "Bomba lanzada";
+    }, 3250)
+    setTimeout(() => {
+        botonRandom.innerHTML = "Bomba lanzada.";
+    }, 3500)
+    setTimeout(() => {
+        botonRandom.innerHTML = "Bomba lanzada..";
+    }, 3750)
+    setTimeout(() => {
+        botonRandom.innerHTML = "Bomba lanzada...";
+    }, 4000)
+
+    // Animacion de la explosion
+    setTimeout(() => {
+        botonRandom.innerHTML = "";
+        botonRandom.classList.remove("bombalanzado")
+        botonRandom.disabled = false;
+        bombaFondo.classList.add("bombafondo")
+    }, 4100)
+    setTimeout(() => {
+        bombaFondo.classList.remove("bombafondo")
+        document.body.classList.remove("bgFondoNormal")
+        document.body.classList.add("bgFondoBomba")
+        audioExplosion.load()
+        audioExplosion.play()
+    }, 4940)
+    setTimeout(() => {
+        document.body.classList.remove("bgFondoBomba")
+        document.body.classList.add("bgFondoNormal")
+        document.body.style.backgroundColor = "#fff"
+        botonRandom.innerHTML = "Clikeame!";
+    }, 5940)
+
+}
