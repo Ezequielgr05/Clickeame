@@ -8,24 +8,35 @@ checker = 0;
 funciones = [arcoiris, rickroll, rock, bombaNuclear];
 let rick = 0;
 
-botonRandom.addEventListener("click", () => {
-    if (checker == 0) {
-        funcion = Math.floor(Math.random() * funciones.length);
-        if ((funcion == 1) && (rick == 0)) {
-            funciones[funcion]()
-            rick = 10;
-        } else if ((funcion == 1) && (rick !== 0)) {
-            do {
-                funcion = Math.floor(Math.random() * funciones.length);
-            } while (funcion === 1)
-            rick = rick - 1;
-            console.log("se cambio la variable a: " + rick)
-            funciones[funcion]()
-        }
-            funciones[funcion]()
+botonRock.addEventListener("click", () => {
+    rock()
+})
+
+botonRick.addEventListener("click", () => {
+    rickroll()
+})
+
+botonArcoiris.addEventListener("click", () => {
+    arcoiris()
+
+    if (checker == 1) {
+        botonRock.innerHTML = "";
+        botonRick.innerHTML = "";
+        botonBomba.innerHTML = "";
+        titulo.innerHTML = " ";
+        botonArcoiris.classList.add("btn-main")
     } else {
-        funciones[funcion]()
+        botonRock.innerHTML = "Hora del Rock";
+        botonRick.innerHTML = "RickRoll";
+        botonArcoiris.innerHTML = "Arcoiris";
+        botonBomba.innerHTML = "Bomba Nuclear";
+        titulo.innerHTML = "Eventos";
+        botonArcoiris.classList.remove("btn-main")
     }
+})
+
+botonBomba.addEventListener("click", () => {
+    bombaNuclear()
 })
 
 // Fondo arcoiris
@@ -34,7 +45,10 @@ const colores = [red, orange, yellow, green, blue, violet, defaultColor];
 
 function red(){
     document.body.classList.toggle("red")
-    botonRandom.classList.toggle("btn-light")
+    botonRock.classList.toggle("btn-light")
+    botonRick.classList.toggle("btn-light")
+    botonArcoiris.classList.toggle("btn-light")
+    botonBomba.classList.toggle("btn-light")
 }
 
 function orange(){
@@ -43,7 +57,10 @@ function orange(){
 
 function yellow(){
     document.body.classList.toggle("yellow")
-    botonRandom.classList.toggle("btn-light")
+    botonRock.classList.toggle("btn-light")
+    botonRick.classList.toggle("btn-light")
+    botonArcoiris.classList.toggle("btn-light")
+    botonBomba.classList.toggle("btn-light")
 }
 
 function green(){
@@ -56,7 +73,10 @@ function blue(){
 
 function violet(){
     document.body.classList.toggle("violet")
-    botonRandom.classList.toggle("btn-light")
+    botonRock.classList.toggle("btn-light")
+    botonRick.classList.toggle("btn-light")
+    botonArcoiris.classList.toggle("btn-light")
+    botonBomba.classList.toggle("btn-light")
 }
 
 function defaultColor(){
@@ -66,7 +86,10 @@ function defaultColor(){
     document.body.classList.remove("green")
     document.body.classList.remove("blue")
     document.body.classList.remove("violet")
-    botonRandom.classList.remove("btn-light")
+    botonRock.classList.remove("btn-light")
+    botonRick.classList.remove("btn-light")
+    botonArcoiris.classList.remove("btn-light")
+    botonBomba.classList.remove("btn-light")
     document.body.classList.add("bgFondoNormal")
 }
 
@@ -90,10 +113,16 @@ audioRickroll = document.querySelector("#audio-rickroll");
 function rickroll() {
     textStop.innerHTML = " Has sido rickrolleado";
     audioRickroll.play();
-    botonRandom.disabled = true;
+    botonRick.disabled = true;
+    botonRock.disabled = true;
+    botonArcoiris.disabled = true;
+    botonBomba.disabled = true;
     setTimeout(() => {
         textStop.innerHTML = " ";
-        botonRandom.disabled = false;
+        botonRick.disabled = false;
+        botonRock.disabled = false;
+        botonArcoiris.disabled = false;
+        botonBomba.disabled = false;
     }, 9000);
 }
 
@@ -102,13 +131,18 @@ textRock = document.querySelector("#text-rock")
 gifRock = document.querySelector("#gif-rock")
 audioRock = document.querySelector("#audio-rock")
 btnStop = document.querySelector("#btn-stop")
+titulo = document.querySelector("#titulo")
 
 function rock() {
     document.body.classList.add("rock")
     gifRock.src = "img/music.gif";
     textRock.innerHTML = "¡Es la hora del rock!";
     btnStop.innerHTML = "Stop";
-    botonRandom.innerHTML = "";
+    botonRock.innerHTML = "";
+    botonRick.innerHTML = "";
+    botonArcoiris.innerHTML = "";
+    botonBomba.innerHTML = "";
+    titulo.innerHTML = " ";
     audioRock.play();
 }
 
@@ -117,7 +151,11 @@ btnStop.addEventListener("click", () => {
     gifRock.src = "";
     textRock.innerHTML = "";
     btnStop.innerHTML = "";
-    botonRandom.innerHTML = "Clikeame!";
+    botonRock.innerHTML = "Hora del Rock";
+    botonRick.innerHTML = "RickRoll";
+    botonArcoiris.innerHTML = "Arcoiris";
+    botonBomba.innerHTML = "Bomba Nuclear";
+    titulo.innerHTML = "Eventos";
     audioRock.pause();
     audioRock.load();
 })
@@ -128,74 +166,79 @@ audioExplosion = document.querySelector("#audio-explosion")
 audioClick = document.querySelector("#audio-click")
 
 function bombaNuclear(){
-    botonRandom.disabled = true;
-    botonRandom.classList.add("bombacontador")
+    botonBomba.disabled = true;
+    botonRock.innerHTML = "";
+    botonRick.innerHTML = "";
+    botonArcoiris.innerHTML = "";
+    titulo.innerHTML = " ";
+    botonBomba.classList.add("btn-main")
+    botonBomba.classList.add("bombacontador")
 
     // Animacion del 3
     setTimeout(() => {
-        botonRandom.innerHTML = "3";
+        botonBomba.innerHTML = "3";
     }, 250)
     setTimeout(() => {
-        botonRandom.innerHTML = "3.";
+        botonBomba.innerHTML = "3.";
     }, 500)
     setTimeout(() => {
-        botonRandom.innerHTML = "3..";
+        botonBomba.innerHTML = "3..";
     }, 750)
     setTimeout(() => {
-        botonRandom.innerHTML = "3...";
+        botonBomba.innerHTML = "3...";
     }, 1000)
 
     // Animacion del 2
     setTimeout(() => {
-        botonRandom.innerHTML = "2";
+        botonBomba.innerHTML = "2";
     }, 1250)
     setTimeout(() => {
-        botonRandom.innerHTML = "2.";
+        botonBomba.innerHTML = "2.";
     }, 1500)
     setTimeout(() => {
-        botonRandom.innerHTML = "2..";
+        botonBomba.innerHTML = "2..";
     }, 1750)
     setTimeout(() => {
-        botonRandom.innerHTML = "2...";
+        botonBomba.innerHTML = "2...";
     }, 2000)
 
     // Animacion del 1
     setTimeout(() => {
-        botonRandom.innerHTML = "1";
+        botonBomba.innerHTML = "1";
     }, 2250)
     setTimeout(() => {
-        botonRandom.innerHTML = "1.";
+        botonBomba.innerHTML = "1.";
     }, 2500)
     setTimeout(() => {
-        botonRandom.innerHTML = "1..";
+        botonBomba.innerHTML = "1..";
     }, 2750)
     setTimeout(() => {
-        botonRandom.innerHTML = "1...";
+        botonBomba.innerHTML = "1...";
     }, 3000)
 
     // Animacion de la bomba lanzada
     setTimeout(() => {
-        botonRandom.classList.remove("bombacontador")
-        botonRandom.classList.add("bombalanzado")
+        botonBomba.classList.remove("bombacontador")
+        botonBomba.classList.add("bombalanzado")
         audioClick.load()
         audioClick.play()
-        botonRandom.innerHTML = "Bomba lanzada";
+        botonBomba.innerHTML = "Bomba lanzada";
     }, 3250)
     setTimeout(() => {
-        botonRandom.innerHTML = "Bomba lanzada.";
+        botonBomba.innerHTML = "Bomba lanzada.";
     }, 3500)
     setTimeout(() => {
-        botonRandom.innerHTML = "Bomba lanzada..";
+        botonBomba.innerHTML = "Bomba lanzada..";
     }, 3750)
     setTimeout(() => {
-        botonRandom.innerHTML = "Bomba lanzada...";
+        botonBomba.innerHTML = "Bomba lanzada...";
     }, 4000)
 
     // Animacion de la explosion
     setTimeout(() => {
-        botonRandom.innerHTML = "";
-        botonRandom.classList.remove("bombalanzado")
-        botonRandom.disabled = false;
+        botonBomba.innerHTML = "";
+        botonBomba.classList.remove("bombalanzado")
+        botonBomba.disabled = false;
         bombaFondo.classList.add("bombafondo")
     }, 4100)
     setTimeout(() => {
@@ -208,7 +251,13 @@ function bombaNuclear(){
     setTimeout(() => {
         document.body.classList.remove("bgFondoBomba")
         document.body.classList.add("bgFondoNormal")
-        botonRandom.innerHTML = "Clikeame!";
-    }, 5940)
+        botonBomba.classList.remove("btn-main")
+        document.body.style.backgroundColor = "#fff"
+        botonRock.innerHTML = "Hora del Rock";
+        botonRick.innerHTML = "RickRoll";
+        botonArcoiris.innerHTML = "Arcoiris";
+        botonBomba.innerHTML = "Bomba Nuclear";
+        titulo.innerHTML = "Eventos";
 
+    }, 5940)
 }
