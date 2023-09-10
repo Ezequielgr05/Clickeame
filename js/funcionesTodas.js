@@ -4,9 +4,27 @@ botonRock = document.querySelector("#botonRock")
 botonRick = document.querySelector("#botonRick")
 botonArcoiris = document.querySelector("#botonArcoiris")
 botonBomba = document.querySelector("#botonBomba")
+botonPianito = document.querySelector("#botonPiano")
 checker = 0; 
 funciones = [arcoiris, rickroll, rock, bombaNuclear];
 let rick = 0;
+
+// Trancision entre páginas
+volver = document.querySelector("#volver")
+contenido = document.querySelector("#contenido")
+
+volver.addEventListener("click", (e) => {
+    e.preventDefault()
+    contenido.style.opacity = 0;
+    setTimeout(() => {
+        window.location.href = e.target.href;
+    }, 1000);
+})
+
+document.addEventListener('DOMContentLoaded', function () {
+    contenido.style.opacity = 1;
+});
+
 
 botonRock.addEventListener("click", () => {
     rock()
@@ -23,6 +41,7 @@ botonArcoiris.addEventListener("click", () => {
         botonRock.innerHTML = "";
         botonRick.innerHTML = "";
         botonBomba.innerHTML = "";
+        botonPianito.innerHTML = "";
         titulo.innerHTML = " ";
         botonArcoiris.classList.add("btn-main")
     } else {
@@ -30,6 +49,7 @@ botonArcoiris.addEventListener("click", () => {
         botonRick.innerHTML = "RickRoll";
         botonArcoiris.innerHTML = "Arcoiris";
         botonBomba.innerHTML = "Bomba Nuclear";
+        botonPianito.innerHTML = "Pianito";
         titulo.innerHTML = "Eventos";
         botonArcoiris.classList.remove("btn-main")
     }
@@ -37,6 +57,14 @@ botonArcoiris.addEventListener("click", () => {
 
 botonBomba.addEventListener("click", () => {
     bombaNuclear()
+})
+
+botonPianito.addEventListener("click", (e) => {
+    e.preventDefault()
+    contenido.style.opacity = 0;
+    setTimeout(() => {
+        window.location.href = e.target.href;
+    }, 1000);
 })
 
 // Fondo arcoiris
@@ -49,6 +77,7 @@ function red(){
     botonRick.classList.toggle("btn-light")
     botonArcoiris.classList.toggle("btn-light")
     botonBomba.classList.toggle("btn-light")
+    botonPianito.classList.toggle("btn-light")
 }
 
 function orange(){
@@ -61,6 +90,7 @@ function yellow(){
     botonRick.classList.toggle("btn-light")
     botonArcoiris.classList.toggle("btn-light")
     botonBomba.classList.toggle("btn-light")
+    botonPianito.classList.toggle("btn-light")
 }
 
 function green(){
@@ -77,6 +107,7 @@ function violet(){
     botonRick.classList.toggle("btn-light")
     botonArcoiris.classList.toggle("btn-light")
     botonBomba.classList.toggle("btn-light")
+    botonPianito.classList.toggle("btn-light")
 }
 
 function defaultColor(){
@@ -90,6 +121,7 @@ function defaultColor(){
     botonRick.classList.remove("btn-light")
     botonArcoiris.classList.remove("btn-light")
     botonBomba.classList.remove("btn-light")
+    botonPianito.classList.remove("btn-light")
     document.body.classList.add("bgFondoNormal")
 }
 
@@ -117,12 +149,14 @@ function rickroll() {
     botonRock.disabled = true;
     botonArcoiris.disabled = true;
     botonBomba.disabled = true;
+    botonPianito.disabled = true;
     setTimeout(() => {
         textStop.innerHTML = " ";
         botonRick.disabled = false;
         botonRock.disabled = false;
         botonArcoiris.disabled = false;
         botonBomba.disabled = false;
+        botonPianito.disabled = false;
     }, 9000);
 }
 
@@ -135,13 +169,14 @@ titulo = document.querySelector("#titulo")
 
 function rock() {
     document.body.classList.add("rock")
-    gifRock.src = "img/music.gif";
+    gifRock.src = "../img/music.gif";
     textRock.innerHTML = "¡Es la hora del rock!";
     btnStop.innerHTML = "Stop";
     botonRock.innerHTML = "";
     botonRick.innerHTML = "";
     botonArcoiris.innerHTML = "";
     botonBomba.innerHTML = "";
+    botonPianito.innerHTML = "";
     titulo.innerHTML = " ";
     audioRock.play();
 }
@@ -155,6 +190,7 @@ btnStop.addEventListener("click", () => {
     botonRick.innerHTML = "RickRoll";
     botonArcoiris.innerHTML = "Arcoiris";
     botonBomba.innerHTML = "Bomba Nuclear";
+    botonPianito.innerHTML = "Pianito";
     titulo.innerHTML = "Eventos";
     audioRock.pause();
     audioRock.load();
@@ -170,6 +206,7 @@ function bombaNuclear(){
     botonRock.innerHTML = "";
     botonRick.innerHTML = "";
     botonArcoiris.innerHTML = "";
+    botonPianito.innerHTML = "";
     titulo.innerHTML = " ";
     botonBomba.classList.add("btn-main")
     botonBomba.classList.add("bombacontador")
@@ -257,6 +294,7 @@ function bombaNuclear(){
         botonRick.innerHTML = "RickRoll";
         botonArcoiris.innerHTML = "Arcoiris";
         botonBomba.innerHTML = "Bomba Nuclear";
+        botonPianito.innerHTML = "Pianito";
         titulo.innerHTML = "Eventos";
 
     }, 5940)

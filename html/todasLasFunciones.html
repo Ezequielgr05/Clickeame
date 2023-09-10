@@ -6,22 +6,23 @@
     <title>Clickeame!</title>
     <link rel="shortcut icon" href="img/logoMouse.png">
     <!-- Css -->
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/rock.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/rock.css">
 </head>
 <body>
-    <a href="index.html" id="link">Volver</a>
+    <div class="fade-in-out" id="contenido">
+        <a href="../index.html" class="link" id="volver">Volver</a>
     <!-- funcion rickroll -->
     <div class="rickroll">
         <p id="text-stop"></p>
-        <audio src="audio/RickRoll.mp3" id="audio-rickroll"></audio>
+        <audio src="../audio/RickRoll.mp3" id="audio-rickroll"></audio>
     </div>
     
     <!-- rock -->
     <div>
         <h1 class="text-rock" id="text-rock"></h1>
         <img src="" class="gif-rock" id="gif-rock"></img>
-        <audio src="audio/MariposaTecknicolor.mp3" id="audio-rock"></audio>
+        <audio src="../audio/MariposaTecknicolor.mp3" id="audio-rock"></audio>
         <button class="btn-stop" id="btn-stop"></button>
     </div>
 
@@ -31,8 +32,9 @@
         <p><button class="btn-funciones" id="botonRick">RickRoll</button></p>
         <p><button class="btn-funciones" id="botonArcoiris">Arcoiris</button></p>
         <p><button class="btn-funciones" id="botonBomba">Bomba nuclear</button></p>
-        <audio src="audio/explosion.mp3" id="audio-explosion"></audio>
-        <audio src="audio/clickButton.mp3" id="audio-click"></audio>
+        <p><a href="funtionsAdvances/piano2.html" class="btn-funciones" id="botonPiano">Pianito</a></p>
+        <audio src="../audio/explosion.mp3" id="audio-explosion"></audio>
+        <audio src="../audio/clickButton.mp3" id="audio-click"></audio>
     </div>
     
     
@@ -40,6 +42,8 @@
 
 
     <!-- Script -->
-    <script src="js/funcionesTodas.js"></script>
+    <script src="../js/funcionesTodas.js"></script>
 </body>
 </html>
+    </div>
+    

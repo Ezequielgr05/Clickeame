@@ -5,8 +5,33 @@ botonRick = document.querySelector("#botonRick")
 botonArcoiris = document.querySelector("#botonArcoiris")
 botonBomba = document.querySelector("#botonBomba")
 checker = 0; 
-funciones = [arcoiris, rickroll, rock, bombaNuclear];
+funciones = [arcoiris, rickroll, rock, bombaNuclear, pianito];
 let rick = 0;
+
+// Trancision entre páginas
+pianoo = document.querySelector("#Piano")
+contenido = document.querySelector("#contenido")
+todasLasFunciones = document.querySelector("#linkClick")
+
+todasLasFunciones.addEventListener("click", (e) => {
+    e.preventDefault()
+    contenido.style.opacity = 0;
+    setTimeout(() => {
+        window.location.href = e.target.href;
+    }, 1000);
+})
+
+pianoo.addEventListener("click", (e) => {
+    e.preventDefault()
+    contenido.style.opacity = 0;
+    setTimeout(() => {
+        window.location.href = e.target.href;
+    }, 1000);
+})
+
+document.addEventListener('DOMContentLoaded', function () {
+    contenido.style.opacity = 1;
+});
 
 botonRandom.addEventListener("click", () => {
     if (checker == 0) {
@@ -210,5 +235,12 @@ function bombaNuclear(){
         document.body.classList.add("bgFondoNormal")
         botonRandom.innerHTML = "Clikeame!";
     }, 5940)
-
 }
+
+// Piano
+piano = document.querySelector("#Piano")
+
+function pianito() {
+    piano.innerHTML = "Generar pianito"
+}
+

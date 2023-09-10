@@ -1,0 +1,71 @@
+/* Fuentes */
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Hairline&family=Monoton&family=Press+Start+2P&display=swap');
+
+.piano {
+    display: flex;
+    position: relative;
+    width: 600px;
+    height: max-content;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#Advertencia {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Press Start 2P', cursive;
+    color: #ff6767;
+}
+
+.blanca {
+    width: 100px;
+    height: 200px;
+    border: 1px solid #000;
+    transition: 0.2s all;
+}
+
+.blancaPresionada {
+    transform: rotateX(-15deg);
+    transition: 0.2s all;
+}
+
+.negra {
+    position: absolute;
+    background-color: #000;
+    width: 45px;
+    height: 115px;
+    transition: 0.2s all;
+}
+
+.negraPresionada {
+    transform: rotateX(-15deg);
+    transition: 0.2s all;
+}
+
+#DoS {
+    left: 45px;
+}
+
+#ReS {
+    left: 110px;
+}
+
+#FaS {
+    left: 245px;
+}
+
+#SolS {
+    left: 311px;
+}
+
+#LaS {
+    left: 376px;
+}
+
+#DoOS {
+    left: 510px;
+}
