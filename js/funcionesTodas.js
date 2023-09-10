@@ -289,7 +289,6 @@ function bombaNuclear(){
         document.body.classList.remove("bgFondoBomba")
         document.body.classList.add("bgFondoNormal")
         botonBomba.classList.remove("btn-main")
-        document.body.style.backgroundColor = "#fff"
         botonRock.innerHTML = "Hora del Rock";
         botonRick.innerHTML = "RickRoll";
         botonArcoiris.innerHTML = "Arcoiris";

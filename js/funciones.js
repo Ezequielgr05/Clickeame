@@ -34,6 +34,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 botonRandom.addEventListener("click", () => {
+    piano.innerHTML = " "
     if (checker == 0) {
         funcion = Math.floor(Math.random() * funciones.length);
         if ((funcion == 1) && (rick == 0)) {
